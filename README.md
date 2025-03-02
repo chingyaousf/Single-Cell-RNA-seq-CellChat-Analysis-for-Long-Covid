@@ -107,9 +107,9 @@ This repository contains the analysis of **cell-cell communication in Long Covid
 
 -   **Comparison of inhibitory vs. activating interactions**.
 
-    ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/cellchat/compare_interactions_27celltypes.png?raw=true){width="634"}
+    ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/cellchat/compare_interactions_27celltypes.png?raw=true){width="381"}
 
-    ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/cellchat/distance_functional_similarity_LongCovid_Control_27celltypes_top15_fixed.png?raw=true){width="627"}
+    ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/cellchat/distance_functional_similarity_LongCovid_Control_27celltypes_top15_fixed.png?raw=true){width="447"}
 
     ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/cellchat/informationFlow_selectedPathways.png?raw=true){width="701"}
 
@@ -119,18 +119,18 @@ This repository contains the analysis of **cell-cell communication in Long Covid
 
 ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/cellchat/ICAM_chord_CD4.Tfh_CD4.IL22_CD8.TE_gdT_comparison_02.png?raw=true){width="660"}
 
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Dotplot_CD4.IL22_LCvsControl_Reactome_03.png?raw=true){width="544"}
+![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Dotplot_CD4.IL22_LCvsControl_Reactome_03.png?raw=true){width="418"}
 
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Dotplot_CD4.Tfh_LCvsControl_Reactome_03.png?raw=true){width="654"}
+![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Dotplot_CD4.Tfh_LCvsControl_Reactome_03.png?raw=true){width="400"}
 
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Dotplot_CD8.TE_LCvsControl_Reactome_03.png?raw=true){width="777"}
+![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Dotplot_CD8.TE_LCvsControl_Reactome_03.png?raw=true){width="474"}
 
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Dotplot_gdT_LCvsControl_Reactome_03.png?raw=true){width="906"}
+![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Dotplot_gdT_LCvsControl_Reactome_03.png?raw=true){width="375"}
 
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Barplot_CD4.IL22_Reactome_FindMarkers.png?raw=true){width="680"}
+![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Barplot_CD4.IL22_Reactome_FindMarkers.png?raw=true){width="323"}
 
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Barplot_CD4.Tfh_Reactome_FindMarkers.png?raw=true){width="618"}
+![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Barplot_CD4.Tfh_Reactome_FindMarkers.png?raw=true){width="372"}
 
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Barplot_CD8.TE_Reactome_FindMarkers.png?raw=true){width="557"}
+![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Barplot_CD8.TE_Reactome_FindMarkers.png?raw=true){width="375"}
 
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Barplot_gdT_Reactome_FindMarkers.png?raw=true){width="507"}
+![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Barplot_gdT_Reactome_FindMarkers.png?raw=true){width="330"}
