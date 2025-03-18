@@ -1,136 +1,115 @@
-# Single-Cell RNA-seq CellChat Analysis for Long Covid
+# Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets
 
-## Overview
+### Pathway Analysis Overview
 
-This repository contains the analysis of **cell-cell communication in Long Covid** using the **CellChat** package. The study focuses on identifying key **signaling pathways** and evaluating **interaction strength across various cell types**.
+**Pathway analysis** is a crucial bioinformatics approach used to interpret gene expression data by identifying biological pathways that are significantly enriched in a given set of genes. By understanding these pathways, researchers can uncover the biological mechanisms underlying various conditions or phenotypes. This repository contains the code and results for a pathway analysis of single-cell RNA-seq data, utilizing three key gene sets: GO (Gene Ontology), Hallmark, and C2
 
-## Objectives
+(Curated Pathways). The analysis was performed at both the whole cluster level and for individual clusters, with pathways annotated to define subset cell types within each cluster.
 
--   Identify and visualize cell-cell communication networks in **Long Covid vs. Control** samples.
+### Data and Methods
 
--   Compare **signaling pathways** enriched in Long Covid.
+-   **Data Sources**: Single-cell RNA-seq data.
 
--   Determine **key sender, receiver, mediator, and influencer** cell populations.
+-   **Gene Sets**: GO (Biological Process), Hallmark, and C2:CP (Curated Pathways).
 
--   Highlight **inhibitory vs. activating interactions** across different immune cell types.
+-   **Tools Used**:
 
-## Methodology
+    -   `Seurat` for data processing and differential expression analysis.
 
--   Single-cell RNA-seq data preprocessed using **Seurat**.
+    -   `clusterProfiler` for enrichment analysis.
 
--   Cell-cell communication inferred using **CellChat**.
+    -   `msigdbr` for accessing MSigDB gene sets.
 
--   Pathway enrichment analysis using **Reactome**.
+    -   `ggplot2`, `pheatmap`, `enrichplot` for visualization.
 
--   Visualization of interactions using **network graphs, river plots, and heatmaps**.
+-   **Analysis Flow**:
 
--   Statistical comparison of interaction strengths between **Long Covid and Control groups**.
+    1.  Load and preprocess the Seurat object.
 
-## Dependencies
+    2.  Perform differential expression analysis (DEA) across clusters.
 
--   **R 4.3.0** or later
+    3.  Conduct enrichment analysis for GO, Hallmark, and C2:CP gene sets.
 
--   **Seurat (v5.1.0 / v4.3.0.1)**
+    4.  Visualize top pathways and annotate subset cell types.
 
--   **CellChat**
+### Reproducing the Analysis
 
--   **ggplot2, dplyr, tidyr, ComplexHeatmap** (for visualization)
+1.  **Set Up the Environment**: Install necessary R packages.
 
--   **ReactomePA, clusterProfiler** (for pathway enrichment)
+    ```         
+    install.packages('tidyverse')
+    BiocManager::install(c("clusterProfiler", "org.Hs.eg.db"))
+    install.packages("msigdbr")
+    ```
 
-## Data
+2.  **Run the Analysis**:
 
--   Processed **Seurat object** containing **Long Covid and Control** samples.
+    Execute the R scripts
 
--   CellChat objects stored in:
+3.  **Visualize Results**
 
-    -   `/home/cyang40/chingyao/long_covid_project/merged_samples_02/long_covid_control_cellchat/`
+### Results
 
-## Workflow
+-   **GO Enrichment**:
 
-### 1. Data Preprocessing
+    -   Identified key biological processes across all clusters and specific clusters.
 
--   **Filter & normalize** scRNA-seq data using Seurat.
+        ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/GO_Enrichment_Cluster_0_barplot_02.png?raw=true)
 
--   **Cluster annotation** for major immune cell types.
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/GO_Enrichment_Cluster_0_dotplot_02.png?raw=true)
 
-### 2. CellChat Analysis
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/top_10_GO_pathways_barplot_b_cell.png?raw=true)
 
--   **Identify cell-cell interactions** based on ligand-receptor pairs.
+        ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/top_10_hallmark_pathways_barplot_mono_mac.png?raw=true)
 
--   **Compute interaction strength** and visualize networks.
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/top_10_pathways_barplot_nk_t_cell.png?raw=true)
 
--   **Compare Long Covid vs. Control** using differential interaction analysis.
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/Top_10_GO_Pathways_heatmap_b_cell.png?raw=true)
 
-### 3. Signaling Pathway Analysis
+    -   
 
--   Perform **Reactome enrichment** on detected signaling pathways.
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/Top_10_Pathways_heatmap_nk_t_cell.png?raw=true)![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/Top_10_GO_Pathways_heatmap_mono_mac.png?raw=true)
 
--   Highlight upregulated and downregulated pathways in Long Covid.
+-   **Hallmark Gene Sets**:
 
-### 4. Visualization
+    -   Highlighted hallmark pathways across all clusters and specific clusters.
 
--   **Network diagrams** showing cell-cell interactions.
+        ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/hallmark_Enrichment_Cluster_0_barplot_02.png?raw=true)
 
--   **Bubble plots** highlighting key ligand-receptor pairs.
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/hallmark_Enrichment_Cluster_0_dotplot_02.png?raw=true)
 
--   **Chord diagrams** depicting communication between cell types.
+    -   
 
--   **Bar plots** summarizing interaction strength across conditions.
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/top_10_hallmark_pathways_barplot_b_cell.png?raw=true)
 
--   **Dot plots & heatmaps** summarizing pathway activation.
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/top_10_hallmark_pathways_barplot_mono_mac.png?raw=true)
 
--   **Scatter plots** comparing signaling differences between Long Covid and Control.
+        ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/top_10_hallmark_pathways_barplot_nk_t_cell.png?raw=true)
 
--   **Violin plots** displaying gene expression of key signaling molecules.
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/Top_10_hallmark_Pathways_heatmap_b_cell.png?raw=true)
 
--   **River plots** illustrating pathway communication.
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/Top_10_hallmark_Pathways_heatmap_mono_mac.png?raw=true)
 
-```{=html}
-<!-- -->
-```
--   **Dot plots & heatmaps** summarizing pathway activation.
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/Top_10_hallmark_Pathways_heatmap_nk_t_cell_viridis.png?raw=true)
 
-## Results
+-   **C2:CP Pathways**:
 
--   **Most connected cell types**: Monocytes, CD8 T cells, and DC cells.
+    -   Provided insight into curated pathways involved in across all clusters and specific clusters.
 
--   **Key pathways** in Long Covid:
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/C2:CP/c2_cp_Enrichment_Cluster_0_barplot_02.png?raw=true)
 
-    -   **ICAM signaling** (ICAM2, ITGAL, ITGB2)
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/C2:CP/c2_cp_Enrichment_Cluster_0_dotplot_02.png?raw=true)
 
-    -   **TGFβ pathway**
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/C2:CP/top_10_c2_cp_pathways_barplot_b_cell.png?raw=true)
 
-    -   **IFN-II pathway**
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/C2:CP/top_10_c2_cp_pathways_barplot_mono_mac.png?raw=true)
 
-    -   **Resistin & IGF signaling**
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/C2:CP/top_10_c2_cp_pathways_barplot_nk_t_cell.png?raw=true){width="3600"}![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/C2:CP/Top_10_c2_cp_Pathways_heatmap_b_cell.png?raw=true)
 
--   **Comparison of inhibitory vs. activating interactions**.
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/C2:CP/Top_10_c2_cp_Pathways_heatmap_mono_mac.png?raw=true)
 
-    ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/cellchat/compare_interactions_27celltypes.png?raw=true){width="381"}
+### Future Directions
 
-    ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/cellchat/distance_functional_similarity_LongCovid_Control_27celltypes_top15_fixed.png?raw=true){width="447"}
+-   Extend the analysis to additional gene sets or custom pathway databases.
 
-    ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/cellchat/informationFlow_selectedPathways.png?raw=true){width="701"}
-
-    ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/cellchat/heatmap_incoming_comparison_27celltypes_02.png?raw=true)
-
-    ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/cellchat/heatmap_outgoing_comparison_27celltypes_02.png?raw=true)
-
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/cellchat/ICAM_chord_CD4.Tfh_CD4.IL22_CD8.TE_gdT_comparison_02.png?raw=true){width="660"}
-
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Dotplot_CD4.IL22_LCvsControl_Reactome_03.png?raw=true){width="418"}
-
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Dotplot_CD4.Tfh_LCvsControl_Reactome_03.png?raw=true){width="400"}
-
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Dotplot_CD8.TE_LCvsControl_Reactome_03.png?raw=true){width="474"}
-
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Dotplot_gdT_LCvsControl_Reactome_03.png?raw=true){width="375"}
-
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Barplot_CD4.IL22_Reactome_FindMarkers.png?raw=true){width="323"}
-
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Barplot_CD4.Tfh_Reactome_FindMarkers.png?raw=true){width="372"}
-
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Barplot_CD8.TE_Reactome_FindMarkers.png?raw=true){width="375"}
-
-![](https://github.com/chingyaousf/Single-Cell-RNA-seq-CellChat-Analysis-for-Long-Covid/blob/main/pathways/Barplot_gdT_Reactome_FindMarkers.png?raw=true){width="330"}
+-   Refine cell type annotations based on pathway enrichment patterns.
